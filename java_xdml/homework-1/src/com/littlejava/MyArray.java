@@ -1,49 +1,49 @@
 package com.littlejava;
 
-import java.util.Arrays;
+public class MyArray{
+    int[] array = new int[10];
+    int index = 0;
+    int max;
+    int temp;
 
-public class MyArray {
-    int[] arr = new int[0];
-    int mid;
     public int[] add(int x){
-        int[] teparr = new int[arr.length+1];
-        System.arraycopy(arr,0,teparr,0,arr.length);
-        teparr[arr.length] = x;
-        arr = teparr;
-        return   arr;
+        array[index] = x;
+        index++;
+        return array;
     }
+
     public int[] sort(){
-        for ( int i=0; i < arr.length; i++ ){
-
-            for ( int j=0; j < arr.length-1-i; j++ ){
-                if(arr[j]>arr[j+1]){
-                    mid = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = mid;
+        for (int i = 0; i<array.length; i++){
+            for(int j=i+1; j<array.length; j++){
+                if(array[j] < array[i]){
+                    temp = array[j];
+                    array[j] = array[i];
+                    array[i] = temp;
                 }
-
             }
         }
-        return arr;
+        return array;
     }
-    public int max(){
-        int max = arr[0];
-        for ( int i=1; i < arr.length; i++ ){
 
-            if( arr[i] > max){
-                max = arr[i];
+    public int max(){
+        max = array[0];
+        for (int i = 0; i < array.length; i++){
+            if(max < array[i]){
+                max = array[i];
             }
         }
         return max;
     }
+
     public int length(){
-        return arr.length;
+        return array.length;
     }
+
     public int[] output(){
-
-        int[] outarr = new int[arr.length];
-        System.arraycopy(arr,0,outarr,0,arr.length);
-
-        return   outarr;
+        int[] newArray = new int[array.length];
+        for (int i=0; i<array.length; i++){
+            newArray[i] = array[i];
+        }
+        return newArray;
     }
 }
