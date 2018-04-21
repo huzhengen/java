@@ -2,17 +2,16 @@ package com.littlejava;
 
 public class MyArray{
     int[] array = new int[10];
-    int index = 0;
-    int max;
-    int temp;
 
     public int[] add(int x){
+        int index = 0;
         array[index] = x;
         index++;
         return array;
     }
 
     public int[] sort(){
+        int temp;
         for (int i = 0; i<array.length; i++){
             for(int j=i+1; j<array.length; j++){
                 if(array[j] < array[i]){
@@ -26,6 +25,7 @@ public class MyArray{
     }
 
     public int max(){
+        int max;
         max = array[0];
         for (int i = 0; i < array.length; i++){
             if(max < array[i]){
