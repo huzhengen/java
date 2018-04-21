@@ -13,6 +13,8 @@ public class Main {
 
         int x = myArray.x;
 
+        org.bigjava.MyArray bigArray = new org.bigjava.MyArray();
+
         MyArray.class_method();
 
         MyArray myArray1 = new MyArray(123);
