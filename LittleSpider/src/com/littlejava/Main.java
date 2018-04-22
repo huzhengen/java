@@ -25,4 +25,3 @@ public class Main {
         viewer.display();
     }
 }
-
