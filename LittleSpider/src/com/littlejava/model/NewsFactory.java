@@ -10,6 +10,7 @@ public class NewsFactory {
 
     public NewsFactory(String dir) throws Exception {
         newsDir = new File(dir); // 打开目录
+        System.out.println(newsDir);
         if (!newsDir.exists()) {
             throw new Exception("路径不存在!");
         }
@@ -31,6 +32,20 @@ public class NewsFactory {
                     News news = new News(title, content);
 
                     // 添加代码读取 相关新闻
+                    // 下面开始抄代码
+                    reader.readLine();
+//                    String date = reader.readLine();
+//                    String related_title = reader.readLine();
+//                    news.addRelated(date, related_title);
+                    while(true){
+                        String date = reader.readLine();
+                        String related_title = reader.readLine();
+                        if(date != null){
+                            news.addRelated(date, related_title);
+                        }else{
+                            break;
+                        }
+                    }
 
                     newsList.add(news);
                 } catch (java.io.IOException e) {

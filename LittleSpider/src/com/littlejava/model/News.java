@@ -17,9 +17,16 @@ public class News {
 
     public void addRelated(String date, String related_title) {
         //填写你的代码
+        this.related.put(date, related_title);
     }
 
     public Map<String, String> getRelated() {
+//        System.out.println(this.related);
+//        System.out.println("|Related|");
+//        for (String key : related.keySet()) {
+//            String value = related.get(key);
+//            System.out.println("日期：" + key + "\n标题：" + value);
+//        }
         return related;
     }
 
