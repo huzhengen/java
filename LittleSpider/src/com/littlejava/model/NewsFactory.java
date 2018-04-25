@@ -36,7 +36,11 @@ public class NewsFactory {
                     reader.readLine();
 //                    String date = reader.readLine();
 //                    String related_title = reader.readLine();
-//                    news.addRelated(date, related_title);
+//                    if(date != null){
+//                        news.addRelated(date, related_title);
+//                    }else{
+//                        break;
+//                    }
                     while(true){
                         String date = reader.readLine();
                         String related_title = reader.readLine();
