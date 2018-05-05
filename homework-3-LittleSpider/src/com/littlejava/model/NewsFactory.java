@@ -33,6 +33,13 @@ public class NewsFactory {
                 }
             }
         }
+
+        NewsWithRelated newsWithRelated = new NewsWithRelated("05.05", "训练明天开始");
+        newsWithRelated.addRelated("05.06", "训练第一天");
+        newsWithRelated.addRelated("05.07", "训练第二天");
+        newsWithRelated.addRelated("05.08", "训练第三天");
+        newsList.add(newsWithRelated);
+
         return newsList;
     }
 }

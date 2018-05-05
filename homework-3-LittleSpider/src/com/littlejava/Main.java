@@ -3,8 +3,10 @@ package com.littlejava;
 import com.littlejava.model.News;
 import com.littlejava.model.NewsFactory;
 import com.littlejava.model.NewsWithRelated;
-import com.littlejava.view.NewsListViewer;
+import com.littlejava.model.Viewable;
+import com.littlejava.view.ListViewer;
 
+import javax.swing.text.View;
 import java.util.ArrayList;
 
 public class Main {
@@ -22,12 +24,11 @@ public class Main {
         NewsFactory newsReader = new NewsFactory(resource_path);
         ArrayList<News> newsList = newsReader.fetch();
 
-        NewsWithRelated newsWithRelated = new NewsWithRelated("new title", "new content");
-        newsWithRelated.addRelated("5.02", "about 5.02 title");
+        ArrayList<Viewable> viewableList = new ArrayList<Viewable>();
+        viewableList.addAll(newsList);
 
-        newsList.add(newsWithRelated);
+        ListViewer viewer = new ListViewer(viewableList);
 
-        NewsListViewer viewer = new NewsListViewer(newsList);
         viewer.display();
     }
 }
