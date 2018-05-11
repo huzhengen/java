@@ -3,6 +3,7 @@ package com.littlejava.model;
 import java.util.HashMap;
 import java.util.Map;
 
+//继承News
 public class NewsWithRelated extends News {
     private HashMap<String, String> relateds;
 
@@ -23,8 +24,8 @@ public class NewsWithRelated extends News {
         super.display();
         System.out.println("|Related|");
         for(Map.Entry<String, String> entry : this.relateds.entrySet()) {
-            System.out.println(entry.getKey());
-            System.out.println(entry.getValue());
+            System.out.println(entry.getKey());// 输出相关文章的标题
+            System.out.println(entry.getValue());// 输出对应url
         }
     }
 }
