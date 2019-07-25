@@ -1,14 +1,32 @@
-class Person{
-	public String name;
-	public int age;
+public class Main{
+	public static void main(String[] args){
+		Person ming = new Person();
+		ming.setName("xiao ming");
+		ming.setAge(11);
+		System.out.println(ming.getName() + ", " + ming.getAge());
+	}
 }
 
-Person ming = new Person();
+class Person{
+	private String name;
+	private int age;
 
-ming.name = "xiao ming";
-ming.age = 22;
-System.out.println(ming.name);
+	public String getName(){
+		return this.name;
+	}
 
-Person hong = new Person();
-hong.name = "xiao hong";
-hong.age = 33;
+	public void setName(String name){
+		this.name = name;
+	}
+
+	public int getAge(){
+		return this.age;
+	}
+
+	public void setAge(int age){
+		if(age<0 || age>100){
+			throw new IllegalArgumentException("invalid age value");
+		}
+		this.age = age;
+	}
+}
