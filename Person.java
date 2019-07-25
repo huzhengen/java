@@ -16,7 +16,10 @@ class Person{
 	}
 
 	public void setName(String name){
-		this.name = name;
+		if(name == null || name.isBlank()){
+			throw new IllegalArgumentException("invalid name");
+		}
+		this.name = name.trip();
 	}
 
 	public int getAge(){
