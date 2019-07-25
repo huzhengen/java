@@ -1,4 +1,4 @@
-public class Main{
+public class Demo3{
 	public static void main(String[] args){
 		Person ming = new Person();
 		ming.setName("xiao ming");
